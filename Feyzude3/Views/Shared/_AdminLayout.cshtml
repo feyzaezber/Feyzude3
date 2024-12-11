@@ -42,9 +42,29 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/Admins/Index">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
+                    <span>Admin</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Categories/Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Kategori</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/SubCategories/Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Alt Kategori</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/Products/Index">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Çalışanlarımız</span>
                 </a>
             </li>
 
@@ -423,6 +443,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="~/Admin/js/sb-admin-2.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 
 </body>
 
