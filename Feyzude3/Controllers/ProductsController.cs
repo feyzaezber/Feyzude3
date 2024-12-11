@@ -46,6 +46,7 @@ namespace Feyzude3.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            ViewData["Category_Id"] = new SelectList(_context.Categories, "Category_Id", "Category_Name");
             return View();
         }
 
@@ -62,6 +63,7 @@ namespace Feyzude3.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Category_Id"] = new SelectList(_context.Categories, "Category_Id", "Category_Name");
             return View(product);
         }
 
@@ -74,6 +76,7 @@ namespace Feyzude3.Controllers
             }
 
             var product = await _context.Products.FindAsync(id);
+            ViewData["Category_Id"] = new SelectList(_context.Categories, "Category_Id", "Category_Name");
             if (product == null)
             {
                 return NotFound();
@@ -113,6 +116,7 @@ namespace Feyzude3.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Category_Id"] = new SelectList(_context.Categories, "Category_Id", "Category_Name");
             return View(product);
         }
 

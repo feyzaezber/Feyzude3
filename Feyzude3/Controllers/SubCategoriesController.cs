@@ -46,6 +46,7 @@ namespace Feyzude3.Controllers
         // GET: SubCategories/Create
         public IActionResult Create()
         {
+            ViewData["Category_Id"] = new SelectList(_context.Categories, "Category_Id", "Category_Name");
             return View();
         }
 
@@ -62,6 +63,7 @@ namespace Feyzude3.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Category_Id"] = new SelectList(_context.Categories, "Category_Id", "Category_Name");
             return View(subCategory);
         }
 
@@ -74,6 +76,7 @@ namespace Feyzude3.Controllers
             }
 
             var subCategory = await _context.SubCategories.FindAsync(id);
+            ViewData["Category_Id"] = new SelectList(_context.Categories, "Category_Id", "Category_Name");
             if (subCategory == null)
             {
                 return NotFound();
@@ -113,6 +116,7 @@ namespace Feyzude3.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Category_Id"] = new SelectList(_context.Categories, "Category_Id", "Category_Name");
             return View(subCategory);
         }
 
