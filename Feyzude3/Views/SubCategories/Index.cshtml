@@ -29,7 +29,7 @@
                 @Html.DisplayFor(modelItem => item.SubCategory_Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category_Id)
+                @Html.DisplayFor(modelItem => item.Category.Category_Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.SubCategory_Id">Edit</a> |

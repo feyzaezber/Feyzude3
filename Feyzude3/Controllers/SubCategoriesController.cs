@@ -22,7 +22,7 @@ namespace Feyzude3.Controllers
         // GET: SubCategories
         public async Task<IActionResult> Index()
         {
-            return View(await _context.SubCategories.ToListAsync());
+            return View(await _context.SubCategories.Include("Category").ToListAsync());
         }
 
         // GET: SubCategories/Details/5
