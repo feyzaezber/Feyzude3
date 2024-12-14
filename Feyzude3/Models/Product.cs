@@ -10,14 +10,15 @@ namespace Feyzude3.Models
         public string Product_Name { get; set; } = string.Empty;
         public string Product_Description { get; set; } = string.Empty;
         public string Product_Image { get; set; } = string.Empty;
-        public string Product_Price { get; set; }
+        public string? Product_Price { get; set; }
         [ForeignKey("Category")]
-        public int Category_Id { get; set; }
+        public int? Category_Id { get; set; }
         public virtual Category? Category { get; set; }
         [ForeignKey("SubCategories")]
-        public int SubCategory_Id {  get; set; }
+        public int? SubCategory_Id {  get; set; }
         public virtual SubCategory? SubCategory { get; set; }
         public string Product_Feature { get; set; } = string.Empty;
-
+        [NotMapped]
+        public IFormFile? PictureImage {  get; set; } 
     }
 }
