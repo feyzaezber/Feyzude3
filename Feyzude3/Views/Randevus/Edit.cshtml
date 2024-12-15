@@ -1,0 +1,45 @@
+﻿@model Feyzude3.Models.Randevu
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Randevu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RandevuId" />
+            <div class="form-group">
+                <label asp-for="RandevuName" class="control-label"></label>
+                <input asp-for="RandevuName" class="form-control" />
+                <span asp-validation-for="RandevuName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RandevuSaat" class="control-label"></label>
+                <input asp-for="RandevuSaat" class="form-control" />
+                <span asp-validation-for="RandevuSaat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RandevuTelefon" class="control-label"></label>
+                <input asp-for="RandevuTelefon" class="form-control" />
+                <span asp-validation-for="RandevuTelefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
